@@ -14,7 +14,8 @@ public class adcalculator {
             System.out.println("     =>press 3 to multiplication");
             System.out.println("     =>press 4 to division");
             System.out.println("     =>press 5 to squer root");
-            System.out.println("     =>press 6 to exit");
+            System.out.println("     =>press 6 to view developers");
+            System.out.println("     =>press 7 to exit");
             System.out.print("         =>please enter ur chooise:".toUpperCase());
             ch = input.nextInt();
             System.out.println("");
@@ -40,11 +41,24 @@ public class adcalculator {
                     addmoreq();
                     break;
                 case 6:
+                    developers();
+                    break;
+                case 7:
                     break;
                 default:
                     System.out.println(" \"error\"please enter the correct chooise".toUpperCase());
             }
         } while (ch > 6);
+    }
+
+    public static void developers() {
+        System.out.println("Group Member");
+        System.out.println("1.sosiena yeshidenber");
+        System.out.println("2.fiker bilelegn");
+        System.out.println("3.mihret girma");
+        System.out.println("4.yonaf amsalu");
+        System.out.println("5.robel dereje");
+
     }
 
     public static void addition() {
