@@ -1,6 +1,6 @@
 # SETP-PROJECT
 
-# Library Management System – SETP Assignment
+# Simple calculator – SETP Assignment
 
 Name................................id
 
