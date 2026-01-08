@@ -1,0 +1,169 @@
+
+import java.util.Scanner;
+
+public class adcalculator {
+    static public void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int ch;
+        do {
+            System.out.println("******************************************");
+            System.out.println("        WELCOME TO MY FIRST JAVA CALCULATOR!!");
+            System.out.println("******************************************");
+            System.out.println("     =>press 1 to addition");
+            System.out.println("     =>press 2 to substruction");
+            System.out.println("     =>press 3 to multiplication");
+            System.out.println("     =>press 4 to division");
+            System.out.println("     =>press 5 to squer root");
+            System.out.println("     =>press 6 to exit");
+            System.out.print("         =>please enter ur chooise:".toUpperCase());
+            ch = input.nextInt();
+            System.out.println("");
+            switch (ch) {
+                case 1:
+                    addition();
+                    addmore();
+                    break;
+                case 2:
+                    substruction();
+                    addmores();
+                    break;
+                case 3:
+                    multiplication();
+                    addmorem();
+                    break;
+                case 4:
+                    division();
+                    addmored();
+                    break;
+                case 5:
+                    sqr();
+                    addmoreq();
+                    break;
+                case 6:
+                    break;
+                default:
+                    System.out.println(" \"error\"please enter the correct chooise".toUpperCase());
+            }
+        } while (ch > 6);
+    }
+
+    public static void addition() {
+
+    }
+
+    public static void substruction() {
+
+    }
+
+    public static void multiplication() {
+
+    }
+
+    public static void division() {
+
+    }
+
+    public static void sqr() {
+        double num;
+        Scanner in = new Scanner(System.in);
+        System.out.print("please eneter the number want to know squer root:".toUpperCase());
+        num = in.nextDouble();
+        System.out.println("your number squer root=" + Math.sqrt(num));
+    }
+
+    public static void addmore() {
+        Scanner input = new Scanner(System.in);
+        String inp = "";
+        do {
+            System.out.println("if u want add more press \"y\" else write \"anything\" ".toUpperCase());
+            inp = input.next().toLowerCase();
+            switch (inp) {
+                case "y":
+                    addition();
+                    break;
+                case "exit":
+                default:
+                    System.out.println("       redirecting to home page".toUpperCase());
+                    adcalculator.main(null);
+                    break;
+            }
+        } while (inp != "exit");
+    }
+
+    public static void addmores() {
+        Scanner input = new Scanner(System.in);
+        String inp = "";
+        do {
+            System.out.println("if u want add more press \"y\" else write \"anything\" ".toUpperCase());
+            inp = input.next().toLowerCase();
+            switch (inp) {
+                case "y":
+                    substruction();
+                    break;
+                case "exit":
+                default:
+                    System.out.println("       redirecting to home page".toUpperCase());
+                    adcalculator.main(null);
+                    break;
+            }
+        } while (inp != "exit" && inp != "y");
+        System.out.println("error");
+    }
+
+    public static void addmorem() {
+        Scanner input = new Scanner(System.in);
+        String inp = "";
+        do {
+            System.out.println("if u want add more press \"y\" else write \"anything\" ".toUpperCase());
+            inp = input.next().toLowerCase();
+            switch (inp) {
+                case "y":
+                    multiplication();
+                    break;
+                case "exit":
+                default:
+                    System.out.println("       redirecting to home page".toUpperCase());
+                    adcalculator.main(null);
+                    break;
+            }
+        } while (inp != "exit");
+    }
+
+    public static void addmored() {
+        Scanner input = new Scanner(System.in);
+        String inp = "";
+        do {
+            System.out.println("if u want add more press \"y\" else write \"anything\" ".toUpperCase());
+            inp = input.next().toLowerCase();
+            switch (inp) {
+                case "y":
+                    division();
+                    break;
+                case "exit":
+                default:
+                    System.out.println("       redirecting to home page".toUpperCase());
+                    adcalculator.main(null);
+                    break;
+            }
+        } while (inp != "exit");
+    }
+
+    public static void addmoreq() {
+        Scanner input = new Scanner(System.in);
+        String inp = "";
+        do {
+            System.out.println("if u want add more press \"y\" else write \"anything\" ".toUpperCase());
+            inp = input.next().toLowerCase();
+            switch (inp) {
+                case "y":
+                    sqr();
+                    break;
+                case "exit":
+                default:
+                    System.out.println("       redirecting to home page".toUpperCase());
+                    adcalculator.main(null);
+                    break;
+            }
+        } while (inp != "exit");
+    }
+}
