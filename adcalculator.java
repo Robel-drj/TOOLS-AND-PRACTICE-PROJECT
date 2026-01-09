@@ -23,6 +23,9 @@ public class adcalculator {
             System.out.println("     =>press 11 to absolute value operation");
             System.out.println("     =>press 12 to Logarithm operation");
             System.out.println("     =>press 13 to Trigonometry operation");
+            System.out.println("     =>press 13 to prime check");
+            System.out.println("     =>press 13 to GCD operation");
+            System.out.println("     =>press 13 to LCM operation");
             System.out.println("     =>press 14 to view developers");
             System.out.println("     =>press 15 to exit");
             System.out.print("         =>please enter ur chooise:".toUpperCase());
@@ -81,8 +84,20 @@ public class adcalculator {
                     trigonometric();
                     addmoreTrig();
                 }
-                 case 14 -> developers();
-                case 15-> {
+                case 14 -> {
+                    primeCheck();
+                    addmorePrime();
+                }
+                case 15 -> {
+                    gcdOperation();
+                    addmoreGCD();
+                }
+                case 16 -> {
+                    lcmOperation();
+                    addmoreLCM();
+                }
+                 case 17 -> developers();
+                case 18-> {
                 }
                 default -> System.out.println(" \"error\"please enter the correct chooise".toUpperCase());
             }
@@ -480,6 +495,120 @@ public static void trigonometric() {
     String func = (choice == 1) ? "sin" : (choice == 2) ? "cos" : "tan";
     System.out.println(func + "(" + angle + " degrees) = " + result);
 }
+public static void primeCheck() {
+    int num = 0;
+    boolean validInput = false;
+
+    System.out.println("----- PRIME NUMBER CHECK -----");
+
+    while (!validInput) {
+        try {
+            System.out.print("Enter a positive integer to check if it's prime: ");
+            
+
+            if (num <= 0) {
+                System.out.println("Please enter a positive integer greater than 0.");
+            } else {
+                validInput = true;
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input! Please enter an integer.");
+            
+        }
+    }
+
+    boolean isPrime = true;
+
+    if (num == 1) {
+        isPrime = false;
+    } else {
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+    }
+
+    if (isPrime) {
+        System.out.println(num + " is a prime number.");
+    } else {
+        System.out.println(num + " is NOT a prime number.");
+    }
+}
+
+
+
+
+public static void gcdOperation() {
+    int a = 0, b = 0;
+    boolean validInput = false;
+
+    System.out.println("----- GCD CALCULATION -----");
+
+    while (!validInput) {
+        try {
+            System.out.print("Enter first positive integer: ");
+            
+            System.out.print("Enter second positive integer: ");
+           
+
+            if (a <= 0 || b <= 0) {
+                System.out.println("Both numbers must be positive integers.");
+            } else {
+                validInput = true;
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input! Please enter integers.");
+            
+        }
+    }
+
+    // Euclidean algorithm
+    int x = a, y = b;
+    while (y != 0) {
+        int temp = y;
+        y = x % y;
+        x = temp;
+    }
+
+    System.out.println("GCD of " + a + " and " + b + " is: " + x);
+}
+ public static void lcmOperation() {
+    int a = 0, b = 0;
+    boolean validInput = false;
+
+    System.out.println("----- LCM CALCULATION -----");
+
+    while (!validInput) {
+        try {
+            System.out.print("Enter first positive integer: ");
+            
+            System.out.print("Enter second positive integer: ");
+           
+
+            if (a <= 0 || b <= 0) {
+                System.out.println("Both numbers must be positive integers.");
+            } else {
+                validInput = true;
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input! Please enter integers.");
+            
+        }
+    }
+
+    // LCM using formula: LCM(a, b) = |a*b| / GCD(a, b)
+    int gcd = a, temp = b;
+    while (temp != 0) {
+        int t = temp;
+        temp = gcd % temp;
+        gcd = t;
+    }
+
+    int lcm = (a * b) / gcd;
+    System.out.println("LCM of " + a + " and " + b + " is: " + lcm);
+}
 
 // Addmore function for trigonometric operations
 public static void addmoreTrig() {
@@ -497,9 +626,6 @@ public static void addmoreTrig() {
         }
     } while (!inp.equals("y"));
 }
-
-
-
     public static void addmore() {
         Scanner input = new Scanner(System.in);
         String inp = "";
@@ -703,6 +829,49 @@ public static void addmoreavg() {
         }
     } while (true);
 }
+public static void addmorePrime() {
+    String inp = null;
+    do {
+        System.out.println("Do you want to check another number? Press 'y' for yes, anything else to return to menu.");
+        
 
-  
+        if (inp.equals("y")) {
+            primeCheck();
+        } else {
+            System.out.println("Redirecting to main menu...");
+            return;
+        }
+    } while (!inp.equals("y"));
+}
+  public static void addmoreGCD() {
+    String inp;
+     Scanner input = new Scanner(System.in); 
+    do {
+        System.out.println("Do you want to calculate GCD again? Press 'y' for yes, anything else to return to menu.");
+        inp = input.next().toLowerCase();
+
+        if (inp.equals("y")) {
+            gcdOperation();
+        } else {
+            System.out.println("Redirecting to main menu...");
+            return;
+        }
+    } while (!inp.equals("y"));
+}
+public static void addmoreLCM() {
+    String inp;
+    Scanner input = new Scanner(System.in); 
+    do {
+        System.out.println("Do you want to calculate LCM again? Press 'y' for yes, anything else to return to menu.");
+        inp = input.next().toLowerCase();
+
+        if (inp.equals("y")) {
+            lcmOperation();
+        } else {
+            System.out.println("Redirecting to main menu...");
+            return;
+        }
+    } while (!inp.equals("y"));
+}
+
 }
