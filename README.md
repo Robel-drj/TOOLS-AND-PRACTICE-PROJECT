@@ -72,11 +72,15 @@ The system contains the following main functions:
 - git merge – merge branches
 - git push – upload local changes to GitHub
 - git pull – fetch and merge changes from GitHub
-
 ---
 
-## Branching and Merging Workflow
+## Acknowledgements
 
+- Instructor and teaching assistants of the SETP course
+- Open-source Git and GitHub documentation
+- Java official documentation
+
+## Branching and Merging Workflow
 - **Master Branch:** Contains stable and fully tested code. Only completed features are merged here.
 - **Feature Branches:** Each team member works on a separate branch for a specific feature, e.g., `feature/addition-method`.
 - **Workflow:**
@@ -95,18 +99,39 @@ The system contains the following main functions:
      git push origin master
      ```
 - **Conflict Resolution:** If conflicts occur during merging, resolve them locally, test the code, and then push the merged changes.
-
 ---
+## Input Validation and Error Handling
+
+- The system validates all numeric inputs using exception handling.
+- Invalid inputs (non-numeric values) are handled using `InputMismatchException`.
+- The program prevents invalid operations such as:
+- Division by zero
+- Insufficient input count for operations
+- Users are prompted repeatedly until valid input is provided.
+
+ ## Design Considerations
+
+- The calculator is menu-driven for ease of use.
+- Each operation is implemented as a separate method to improve modularity.
+- Static methods are used to simplify method access without object creation.
+- Code readability and maintainability were prioritized.
+
+  ## Limitations of the System
+- All calculations are performed sequentially through menu selection.
+- No graphical user interface (GUI) is implemented.
 
 ## Version Control Concepts Applied
-
 - Commit history tracking
 - Branching for feature development
 - Pull Requests for code review
 - Merging changes into the main branch
-
 ---
+
 #Future Improvement
 - Support for inverse trigonometric functions  
 - Support for hyperbolic functions (sinh, cosh, tanh)  
-- Allow chaining multiple operations in a single input 
+- Allow chaining multiple operations in a single input
+  
+## License
+This project is developed for academic purposes as part of the SETP course.
+All rights are reserved to the project contributors.
