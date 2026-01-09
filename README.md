@@ -22,6 +22,14 @@ The system was first designed using UML diagrams in ArgoUML and then
 converted into Java source code. Git and GitHub were used for version
 control and collaboration
 
+Objectives of the Project
+
+Apply software engineering tools and practices
+Practice UML-based system design
+Gain experience with Git and GitHub
+Implement calculator logic using Java
+Work collaboratively using branches and merges
+
 ## Tools and Technologies Used
 
 - ArgoUML – for UML class diagram design and Java code generation
