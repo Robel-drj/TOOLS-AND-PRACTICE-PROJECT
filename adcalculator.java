@@ -196,8 +196,37 @@ public class adcalculator {
     }
 
     public static void division() {
+    Scanner input = new Scanner(System.in);
 
+    try {
+        System.out.println("----- DIVISION OPERATION -----");
+
+        // Ask for numerator
+        System.out.print("Enter numerator: ");
+        double numerator = input.nextDouble();
+
+        // Ask for denominator
+        System.out.print("Enter denominator: ");
+        double denominator = input.nextDouble();
+
+        // Check division by zero
+        if (denominator == 0) {
+            System.out.println("Error: Division by zero is not allowed.");
+            return;
+        }
+
+        // Perform division
+        double result = numerator / denominator;
+
+        // Display result
+        System.out.println(numerator + " / " + denominator + " = " + result);
+
+    } catch (InputMismatchException e) {
+        System.out.println("Invalid input! Please enter numeric values only.");
+        input.next(); // clear invalid input
     }
+}
+
 
     public static void sqr() {
         double num;
