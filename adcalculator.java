@@ -21,8 +21,10 @@ public class adcalculator {
             System.out.println("     =>press 9 to factorial operation");
             System.out.println("     =>press 10 to average operation");
             System.out.println("     =>press 11 to absolute value operation");
-            System.out.println("     =>press 12 to view developers");
-            System.out.println("     =>press 13 to exit");
+            System.out.println("     =>press 12 to Logarithm operation");
+            System.out.println("     =>press 13 to Trigonometry operation");
+            System.out.println("     =>press 14 to view developers");
+            System.out.println("     =>press 15 to exit");
             System.out.print("         =>please enter ur chooise:".toUpperCase());
             ch = input.nextInt();
             System.out.println("");
@@ -71,8 +73,16 @@ public class adcalculator {
                     average();
                     addmoreavg();
                 }
-                 case 12 -> developers();
-                case 13-> {
+                case 12 -> {
+                    logarithm();
+                    addmoreLog();
+                }
+                case 13 -> {
+                    trigonometric();
+                    addmoreTrig();
+                }
+                 case 14 -> developers();
+                case 15-> {
                 }
                 default -> System.out.println(" \"error\"please enter the correct chooise".toUpperCase());
             }
@@ -360,6 +370,133 @@ public static void average() {
     System.out.println("AVERAGE = " + avg);
 }
 
+public static void logarithm() {
+     Scanner input = new Scanner(System.in);
+    double num = 0;
+    boolean validInput = false;
+
+    System.out.println("----- LOGARITHM OPERATION -----");
+
+    // Get positive number from user
+    while (!validInput) {
+        try {
+            System.out.print("Enter a positive number to find log base 10: ");
+            num = input.nextDouble();
+
+            if (num <= 0) {
+                System.out.println("Error: Logarithm is undefined for zero or negative numbers.");
+            } else {
+                validInput = true; // input is valid
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input! Please enter a numeric value.");
+         input.next(); // clear invalid input
+        }
+    }
+
+    // Perform calculation
+    double result = Math.log10(num);
+
+    // Display result
+    System.out.println("Log10(" + num + ") = " + result);
+}
+
+// Addmore function for logarithm
+public static void addmoreLog() {
+    String inp;
+     Scanner input = new Scanner(System.in);
+    do {
+        System.out.println("Do you want to perform logarithm again? Press 'y' for yes, anything else to return to menu.");
+        inp = input.next().toLowerCase();
+
+        if (inp.equals("y")) {
+            logarithm();
+        } else {
+            System.out.println("Redirecting to main menu...");
+            return; // back to main menu
+        }
+    } while (!inp.equals("y"));
+}
+public static void trigonometric() {
+    int choice = 0;
+    boolean validChoice = false;
+
+    System.out.println("----- TRIGONOMETRIC FUNCTIONS -----");
+    System.out.println("1. sin(x)");
+    System.out.println("2. cos(x)");
+    System.out.println("3. tan(x)");
+
+    // Choose function
+    while (!validChoice) {
+        Scanner input = new Scanner(System.in); 
+        try {
+            System.out.print("Choose function (1-3): ");
+            choice = input.nextInt();
+
+            if (choice < 1 || choice > 3) {
+                System.out.println("Invalid choice! Please enter 1, 2, or 3.");
+            } else {
+                validChoice = true;
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input! Enter an integer choice.");
+            input.next(); // clear invalid input
+        }
+    }
+
+    // Enter angle in degrees
+    double angle = 0;
+    boolean validAngle = false;
+
+    while (!validAngle) {
+        Scanner input = new Scanner(System.in); 
+        try {
+            System.out.print("Enter the angle in degrees: ");
+            angle = input.nextDouble();
+            validAngle = true;
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input! Please enter a numeric value for the angle.");
+            input.next(); // clear invalid input
+        }
+    }
+
+    double radians = Math.toRadians(angle); // convert to radians
+    double result = 0;
+
+    // Perform calculation
+    switch (choice) {
+        case 1 -> result = Math.sin(radians);
+        case 2 -> result = Math.cos(radians);
+        case 3 -> {
+            if (Math.cos(radians) == 0) { // tangent undefined
+                System.out.println("Error: Tangent is undefined at " + angle + " degrees.");
+                return; // exit method
+            }
+            result = Math.tan(radians);
+        }
+    }
+
+    // Display result
+    String func = (choice == 1) ? "sin" : (choice == 2) ? "cos" : "tan";
+    System.out.println(func + "(" + angle + " degrees) = " + result);
+}
+
+// Addmore function for trigonometric operations
+public static void addmoreTrig() {
+    String inp;
+    Scanner input = new Scanner(System.in); 
+    do {
+        System.out.println("Do you want to perform trigonometric calculation again? Press 'y' for yes, anything else to return to menu.");
+        inp = input.next().toLowerCase();
+
+        if (inp.equals("y")) {
+            trigonometric();
+        } else {
+            System.out.println("Redirecting to main menu...");
+            return; // back to main menu
+        }
+    } while (!inp.equals("y"));
+}
 
 
 
