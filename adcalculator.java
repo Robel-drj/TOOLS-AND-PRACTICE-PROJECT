@@ -61,6 +61,58 @@ public class adcalculator {
 
     public static void addition() {
 
+    Scanner input = new Scanner(System.in);
+    final int MAX_NUMBERS = 20;  // limit to prevent too many inputs
+    int n = 0;
+
+    // Ask user how many numbers to add
+    while (true) {
+        System.out.print("How many numbers do you want to add? ");
+        try {
+            n = input.nextInt();
+            if (n < 2) {
+                System.out.println("Addition requires at least 2 numbers. Please try again.");
+                continue;
+            }
+            if (n > MAX_NUMBERS) {
+                System.out.println("Too many numbers! Maximum allowed is " + MAX_NUMBERS);
+                continue;
+            }
+            break; // valid number of inputs
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input! Please enter an integer.");
+            input.next(); // clear invalid input
+        }
+    }
+
+    double result = 0;
+    String expression = "";
+
+    // Get the first number
+    for (int i = 1; i <= n; i++) {
+        while (true) {
+            System.out.print("Enter number " + i + ": ");
+            try {
+                double num = input.nextDouble();
+                result += num;
+
+                // Build expression string
+                if (i == 1) {
+                    expression += num;
+                } else {
+                    expression += " + " + num;
+                }
+
+                break; // exit inner while loop if valid
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid number! Please enter a valid numeric value.");
+                input.next(); // clear invalid input
+            }
+        }
+    }
+
+    // Display the result
+    System.out.println(expression + " = " + result);
     }
 
     public static void substruction() {
