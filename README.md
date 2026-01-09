@@ -43,6 +43,9 @@ The system contains the following main functions:
 - factorial opration
 - absolute value opration
 - average value calculation
+- power operation
+- percentage operation
+- modulus operation
 
 ---
 
