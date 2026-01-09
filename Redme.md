@@ -40,6 +40,9 @@ The system contains the following main functions:
 - multiplication
 - division
 - square root
+- factorial opration
+- absolute value opration
+- average value calculation
 
 ---
 
