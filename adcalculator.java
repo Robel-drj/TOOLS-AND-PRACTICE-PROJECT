@@ -1,4 +1,5 @@
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class adcalculator {
@@ -20,40 +21,37 @@ public class adcalculator {
             ch = input.nextInt();
             System.out.println("");
             switch (ch) {
-                case 1:
+                case 1 -> {
                     addition();
                     addmore();
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     substruction();
                     addmores();
-                    break;
-                case 3:
+                }
+                case 3 -> {
                     multiplication();
                     addmorem();
-                    break;
-                case 4:
+                }
+                case 4 -> {
                     division();
                     addmored();
-                    break;
-                case 5:
+                }
+                case 5 -> {
                     sqr();
                     addmoreq();
-                    break;
-                case 6:
-                    developers();
-                    break;
-                case 7:
-                    break;
-                default:
-                    System.out.println(" \"error\"please enter the correct chooise".toUpperCase());
+                }
+                 case 6 -> developers();
+                case 7 -> {
+                }
+                default -> System.out.println(" \"error\"please enter the correct chooise".toUpperCase());
             }
-        } while (ch > 6);
+        } while (true);
     }
 
     public static void developers() {
         System.out.println("Group Member");
-        System.out.println("1.sosiena yeshidenber");
+        System.out.println("1.sosina yeshidenber");
         System.out.println("2.fiker bilelegn");
         System.out.println("3.mihret girma");
         System.out.println("4.yonaf amsalu");
@@ -66,7 +64,49 @@ public class adcalculator {
     }
 
     public static void substruction() {
-
+        Scanner input=new Scanner(System.in);
+        final int MAX_NUMBERS=20;
+         int n=0;
+         System.out.println("How many numbers do you want to subtruct? ");
+         try {
+            n= input.nextInt();
+            if(n<2){
+                System.out.println("Subtraction requires at least 2 numbers. ");
+                
+            }
+            if(n>MAX_NUMBERS){
+                System.out.println("Too many numbers! Maximum allowed is "+ MAX_NUMBERS);
+            }
+             
+         } catch (InputMismatchException e) {
+            System.out.println("Invalid input! Enter an integer. ");
+            input.next();
+         }
+         double result =0;
+         String expression= "";
+         System.out.println("Enter number 1: ");
+         try {
+             result=input.nextDouble();
+             expression+= result;
+         } catch (InputMismatchException e) {
+            System.out.println("Invalid number! ");
+            input.next();
+         }
+         for(int i=2; i<=n; i++){
+            System.out.println("Enter number"+i+": ");
+            try {
+                double num= input.nextDouble();
+                result-=num;
+                expression+= " - "+num;
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input! Try again.");
+                input.next();
+                i--;
+            }
+         }
+         System.out.println(expression + " ="+result);
+         if(result<0)
+         System.out.println("Warning: ");
     }
 
     public static void multiplication() {
