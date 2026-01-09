@@ -261,19 +261,30 @@ public class adcalculator {
         System.out.println("your number squer root=" + Math.sqrt(num));
     }
   
-  public static void power() {
+ public static void power() {
     Scanner in = new Scanner(System.in);
-    double base, exponent;
 
-    System.out.print("ENTER BASE NUMBER: ");
-    base = in.nextDouble();
+    try {
+        System.out.print("ENTER BASE NUMBER: ");
+        double base = in.nextDouble();
 
-    System.out.print("ENTER EXPONENT: ");
-    exponent = in.nextDouble();
+        System.out.print("ENTER EXPONENT: ");
+        double exponent = in.nextDouble();
 
-    System.out.println("RESULT = " + Math.pow(base, exponent));
+        if (base == 0 && exponent == 0) {
+            System.out.println("0 POWER 0 IS UNDEFINED.");
+            return;
+        }
+
+        double result = Math.pow(base, exponent);
+        System.out.println("RESULT = " + result);
+
+    } catch (InputMismatchException e) {
+        System.out.println("INVALID INPUT! PLEASE ENTER NUMBERS ONLY.");
+        in.next();
+    }
 }
- 
+
  public static void modulus() {
     Scanner in = new Scanner(System.in);
 
@@ -298,16 +309,28 @@ public class adcalculator {
 
 public static void percentage() {
     Scanner in = new Scanner(System.in);
-    double total, percent;
 
-    System.out.print("ENTER TOTAL NUMBER: ");
-    total = in.nextDouble();
+    try {
+        System.out.print("ENTER TOTAL NUMBER: ");
+        double total = in.nextDouble();
 
-    System.out.print("ENTER PERCENTAGE: ");
-    percent = in.nextDouble();
+        System.out.print("ENTER PERCENTAGE: ");
+        double percent = in.nextDouble();
 
-    System.out.println("RESULT = " + (total * percent / 100));
+        if (percent < 0 || percent > 100) {
+            System.out.println("PERCENTAGE MUST BE BETWEEN 0 AND 100.");
+            return;
+        }
+
+        double result = total * percent / 100;
+        System.out.println("RESULT = " + result);
+
+    } catch (InputMismatchException e) {
+        System.out.println("INVALID INPUT! PLEASE ENTER NUMBERS ONLY.");
+        in.next();
+    }
 }
+
 
 public static void factorial() {
     Scanner in = new Scanner(System.in);
