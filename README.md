@@ -2,24 +2,33 @@
 
 # Simple calculator – SETP Assignment
 
-Name................................id
+Name................................Id
 
-1.Fiker Bilelegn...................ddu1600275
+1.Fiker Bililegn...................DDU1600275
 
-2.Sosina Yeshidenber.................ddu1600680
+2.Sosina Yeshidenber.................DDU1600680
 
-3.Miheret Girma...................ddu1600535
+3.Mihret Girma...................DDU1600535
 
-4.Yonaf Amsalu......................ddu1600762
+4.Yonaf Amsalu......................DDU1600762
 
-5.Robel Dereje.......................rmd2085
+5.Robel Dereje.......................RMD2085
 
+Project Overview
 This project is a simple calculatodeveloped as part of the
 Software Engineering Tools and Practices (SETP) course.
 
 The system was first designed using UML diagrams in ArgoUML and then
 converted into Java source code. Git and GitHub were used for version
 control and collaboration
+
+Objectives of the Project
+
+Apply software engineering tools and practices
+Practice UML-based system design
+Gain experience with Git and GitHub
+Implement calculator logic using Java
+Work collaboratively using branches and merges
 
 ## Tools and Technologies Used
 
@@ -46,7 +55,11 @@ The system contains the following main functions:
 - power operation
 - percentage operation
 - modulus operation
-
+- logarithmic operation (log, ln)  
+- trigonometric operations (sin, cos, tan)
+- prime check
+- GCD(greatest common divisor)
+- LCM(least common factor)
 ---
 
 ## Git Commands Used
@@ -93,3 +106,7 @@ The system contains the following main functions:
 - Merging changes into the main branch
 
 ---
+#Future Improvement
+- Support for inverse trigonometric functions  
+- Support for hyperbolic functions (sinh, cosh, tanh)  
+- Allow chaining multiple operations in a single input 
