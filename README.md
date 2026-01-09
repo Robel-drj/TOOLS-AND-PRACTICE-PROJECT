@@ -8,7 +8,7 @@ Name................................id
 
 2.Sosina Yeshidenber.................ddu1600680
 
-3.Miheret Girma...................ddu1600535
+3.Mihret Girma...................ddu1600535
 
 4.Yonaf Amsalu......................ddu1600762
 
