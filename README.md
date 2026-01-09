@@ -2,17 +2,17 @@
 
 # Simple calculator – SETP Assignment
 
-Name................................id
+Name................................Id
 
-1.Fiker Bilelegn...................ddu1600275
+1.Fiker Bilelegn...................DDU1600275
 
-2.Sosina Yeshidenber.................ddu1600680
+2.Sosina Yeshidenber.................DDU1600680
 
-3.Mihret Girma...................ddu1600535
+3.Mihret Girma...................DDU1600535
 
-4.Yonaf Amsalu......................ddu1600762
+4.Yonaf Amsalu......................DDU1600762
 
-5.Robel Dereje.......................rmd2085
+5.Robel Dereje.......................RMD2085
 
 This project is a simple calculatodeveloped as part of the
 Software Engineering Tools and Practices (SETP) course.
