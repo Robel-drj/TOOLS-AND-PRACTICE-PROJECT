@@ -46,7 +46,8 @@ The system contains the following main functions:
 - power operation
 - percentage operation
 - modulus operation
-
+- logarithmic operation (log, ln)  
+- trigonometric operations (sin, cos, tan)
 ---
 
 ## Git Commands Used
@@ -93,3 +94,7 @@ The system contains the following main functions:
 - Merging changes into the main branch
 
 ---
+#Future Improvement
+- Support for inverse trigonometric functions  
+- Support for hyperbolic functions (sinh, cosh, tanh)  
+- Allow chaining multiple operations in a single input 
