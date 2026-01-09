@@ -49,7 +49,7 @@ The system contains the following main functions:
 - logarithmic operation (log, ln)  
 - trigonometric operations (sin, cos, tan)
 - prime check
-- GCD(great common divisor)
+- GCD(greatest common divisor)
 - LCM(least common factor)
 ---
 
