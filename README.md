@@ -4,7 +4,7 @@
 
 Name................................Id
 
-1.Fiker Bilelegn...................DDU1600275
+1.Fiker Bililegn...................DDU1600275
 
 2.Sosina Yeshidenber.................DDU1600680
 
