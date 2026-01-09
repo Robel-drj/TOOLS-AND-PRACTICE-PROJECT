@@ -10,9 +10,9 @@ Name................................id
 
 3.Miheret Girma...................ddu1600535
 
-4.Yonaf Amssalu......................ddu1600762
+4.Yonaf Amsalu......................ddu1600762
 
-5.Robel DEreje.......................rmd2085
+5.Robel Dereje.......................rmd2085
 
 This project is a simple calculatodeveloped as part of the
 Software Engineering Tools and Practices (SETP) course.
@@ -40,6 +40,9 @@ The system contains the following main functions:
 - multiplication
 - division
 - square root
+- factorial opration
+- absolute value opration
+- average value calculation
 
 ---
 
@@ -57,6 +60,25 @@ The system contains the following main functions:
 ---
 
 ## Branching and Merging Workflow
+
+- **Master Branch:** Contains stable and fully tested code. Only completed features are merged here.
+- **Feature Branches:** Each team member works on a separate branch for a specific feature, e.g., `feature/addition-method`.
+- **Workflow:**
+  1. Create a feature branch from `master`.
+  2. Implement and test your feature.
+  3. Commit changes with descriptive messages.
+  4. Pull the latest `master` updates to avoid conflicts:
+     ```bash
+     git checkout master
+     git pull origin master
+     ```
+  5. Merge your feature branch into `master` using:
+     ```bash
+     git checkout master
+     git merge feature/your-feature
+     git push origin master
+     ```
+- **Conflict Resolution:** If conflicts occur during merging, resolve them locally, test the code, and then push the merged changes.
 
 ---
 
