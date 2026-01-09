@@ -48,6 +48,9 @@ The system contains the following main functions:
 - modulus operation
 - logarithmic operation (log, ln)  
 - trigonometric operations (sin, cos, tan)
+- prime check
+- GCD(greatest common divisor)
+- LCM(least common factor)
 ---
 
 ## Git Commands Used
