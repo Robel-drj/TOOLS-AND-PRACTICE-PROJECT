@@ -15,8 +15,11 @@ public class adcalculator {
             System.out.println("     =>press 3 to multiplication");
             System.out.println("     =>press 4 to division");
             System.out.println("     =>press 5 to squer root");
-            System.out.println("     =>press 6 to view developers");
-            System.out.println("     =>press 7 to exit");
+            System.out.println("     =>press 6 to power(Exponent)");
+            System.out.println("     =>press 7 to Modulus operation");
+            System.out.println("     =>press 8 to Percentage operation");
+            System.out.println("     =>press 9 to view developers");
+            System.out.println("     =>press 10 to exit");
             System.out.print("         =>please enter ur chooise:".toUpperCase());
             ch = input.nextInt();
             System.out.println("");
@@ -41,8 +44,20 @@ public class adcalculator {
                     sqr();
                     addmoreq();
                 }
-                 case 6 -> developers();
+                case 6 -> {
+                    power();
+                    addmorep();
+                }
                 case 7 -> {
+                    modulus();
+                    addmoremod();
+                }
+                case 8 -> {
+                    percentage();
+                    addmoreper();
+                }
+                 case 9 -> developers();
+                case 10-> {
                 }
                 default -> System.out.println(" \"error\"please enter the correct chooise".toUpperCase());
             }
@@ -176,6 +191,55 @@ public class adcalculator {
         num = in.nextDouble();
         System.out.println("your number squer root=" + Math.sqrt(num));
     }
+  
+  public static void power() {
+    Scanner in = new Scanner(System.in);
+    double base, exponent;
+
+    System.out.print("ENTER BASE NUMBER: ");
+    base = in.nextDouble();
+
+    System.out.print("ENTER EXPONENT: ");
+    exponent = in.nextDouble();
+
+    System.out.println("RESULT = " + Math.pow(base, exponent));
+}
+ 
+ public static void modulus() {
+    Scanner in = new Scanner(System.in);
+
+    try {
+        System.out.print("ENTER FIRST NUMBER: ");
+        int a = in.nextInt();
+
+        System.out.print("ENTER SECOND NUMBER: ");
+        int b = in.nextInt();
+
+        if (b == 0) {
+            System.out.println("CANNOT MOD BY ZERO!");
+            return;
+        }
+
+        System.out.println("RESULT = " + (a % b));
+    } catch (InputMismatchException e) {
+        System.out.println("INVALID INPUT! ENTER INTEGERS ONLY.");
+        in.next();
+    }
+}
+
+public static void percentage() {
+    Scanner in = new Scanner(System.in);
+    double total, percent;
+
+    System.out.print("ENTER TOTAL NUMBER: ");
+    total = in.nextDouble();
+
+    System.out.print("ENTER PERCENTAGE: ");
+    percent = in.nextDouble();
+
+    System.out.println("RESULT = " + (total * percent / 100));
+}
+
 
     public static void addmore() {
         Scanner input = new Scanner(System.in);
@@ -212,7 +276,7 @@ public class adcalculator {
                     adcalculator.main(null);
                     break;
             }
-        } while (inp != "exit" && inp != "y");
+        } while (!"exit".equals(inp) && inp != "y");
         System.out.println("error");
     }
 
@@ -272,4 +336,59 @@ public class adcalculator {
             }
         } while (inp != "exit");
     }
+  public static void addmorep() {
+    Scanner input = new Scanner(System.in);
+    String inp = "";
+
+    do {
+        System.out.println("IF U WANT POWER AGAIN PRESS \"Y\" ELSE WRITE \"ANYTHING\"".toUpperCase());
+        inp = input.next().toLowerCase();
+
+        switch (inp) {
+            case "y" -> power();
+            default -> {
+                System.out.println("REDIRECTING TO HOME PAGE".toUpperCase());
+                adcalculator.main(null);
+            }
+        }
+    } while (!inp.equals("exit"));
+}
+public static void addmoremod() {
+    Scanner input = new Scanner(System.in);
+    String inp = "";
+
+    do {
+        System.out.println("IF U WANT MODULUS AGAIN PRESS \"Y\" ELSE WRITE \"ANYTHING\"".toUpperCase());
+        inp = input.next().toLowerCase();
+
+        switch (inp) {
+            case "y" -> modulus();
+            default -> {
+                System.out.println("REDIRECTING TO HOME PAGE".toUpperCase());
+                adcalculator.main(null);
+            }
+        }
+    } while (!inp.equals("exit"));
+}
+public static void addmoreper() {
+    Scanner input = new Scanner(System.in);
+    String inp = "";
+
+    do {
+        System.out.println("IF U WANT PERCENTAGE AGAIN PRESS \"Y\" ELSE WRITE \"ANYTHING\"".toUpperCase());
+        inp = input.next().toLowerCase();
+
+        switch (inp) {
+            case "y":
+                percentage();
+                break;
+            default:
+                System.out.println("REDIRECTING TO HOME PAGE".toUpperCase());
+                adcalculator.main(null);
+                break;
+        }
+    } while (!inp.equals("exit"));
+}
+
+  
 }
